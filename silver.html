@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>KOA Silver Calculator</title>
+<link href="css/SemProj.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="wrapper">
+  <header>
+    <h1>Rick Colgan Semester Project</h1>
+  </header>
+  <nav>
+    <div class="navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="food.html">Food</a></li>
+        <li><a href="wood.html">Wood</a></li>
+        <li><a href="iron.html">Iron</a></li>
+        <li><a href="silver.html">Silver</a></li>
+      </ul>
+    </div>
+    <!-- navigation --> 
+  </nav>
+  <main>
+    <h2>Silver Calculator</h2>
+    <form id="frm1" onclick="calcrss()">
+      <div class="row">
+        <div class="column">
+          <h3>Upgrade Requirements<br />
+            <input name="silverReq" id="silverreq" type="number" value="0">
+          </h3>
+          <h3>On Hand<br />
+            <input name="silverOnHand" id="silveronhand" type="number" value="0"</h3>
+          <h3>In Storehouse<br />
+            <input name="silverStores" id="silverstores" type="number" value="0"</h3>
+          <h3>50<br />
+            <input name="silver0050" id="silver0050" type="number" value="0"</h3>
+          <h3>150<br />
+            <input name="silver0150" id="silver0150" type="number" value="0"</h3>
+          <h3>250<br />
+            <input name="silver0250" id="silver0250" type="number" value="0"</h3>
+        </div>
+        <div class="column">
+          <h3>500<br />
+            <input name="silver0500" id="silver0500" type="number" value="0">
+          </h3>
+          <h3>1.5K<br />
+            <input name="silver1500" id="silver1500" type="number" value="0"</h3>
+          <h3>2.5K<br />
+            <input name="silver2500" id="silver2500" type="number" value="0"</h3>
+          <h3>7.5K<br />
+            <input name="silver7500" id="silver7500" type="number" value="0"</h3>
+          <h3>25K<br />
+            <input name="silver0025K" id="silver0025k" type="number" value="0"</h3>
+          <h3>75K<br />
+            <input name="silver0075K" id="silver0075k" type="number" value="0"</h3>
+        </div>
+      </div>
+      <!-- end row -->
+      <input type="button" value="Calculate Resources">
+      <br />
+      <h3 id="total"></h3>
+      <script>
+					function calcrss() {
+						var silverreq = document.getElementById("silverreq").value;
+						var silveronhand = document.getElementById("silveronhand").value;
+						var silverstores = document.getElementById("silverstores").value;
+						var silver0050 = document.getElementById("silver0050").value * 50;
+						var silver0150 = document.getElementById("silver0150").value * 150;
+						var silver0250 = document.getElementById("silver0250").value * 250;
+						var silver0500 = document.getElementById("silver0500").value * 500;
+						var silver1500 = document.getElementById("silver1500").value * 1500;
+						var silver2500 = document.getElementById("silver2500").value * 2500;
+						var silver7500 = document.getElementById("silver7500").value * 7500;
+						var silver0025k = document.getElementById("silver0025k").value * 25000;
+						var silver0075k = document.getElementById("silver0075k").value * 75000;
+						var total = Number(silverreq) -
+									(Number(silveronhand) +
+									 Number(silverstores) +
+									 Number(silver0050) +
+									 Number(silver0150) +
+									 Number(silver0250) +
+									 Number(silver0500) +
+									 Number(silver1500) +
+									 Number(silver2500) +
+									 Number(silver7500) +
+									 Number(silver0025k) +
+									 Number(silver0075k));
+						if (Number(total) < 0) {
+							total = 0;
+						}
+						document.getElementById("total").innerHTML = "Needed: " + total.toLocaleString();
+					}
+				</script>
+    </form>
+  </main>
+  <footer>
+    <p>This page created by Rick Colgan for SWDV620 Semester Project</p>
+  </footer>
+</div>
+<!-- wrapper -->
+</body>
+</html>

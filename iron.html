@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>KOA Iron Calculator</title>
+<link href="css/SemProj.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="wrapper">
+  <header>
+    <h1>Rick Colgan Semester Project</h1>
+  </header>
+  <nav>
+    <div class="navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="food.html">Food</a></li>
+        <li><a href="wood.html">Wood</a></li>
+        <li><a href="iron.html">Iron</a></li>
+        <li><a href="silver.html">Silver</a></li>
+      </ul>
+    </div>
+    <!-- navigation --> 
+  </nav>
+  <main>
+    <h2>Iron Calculator</h2>
+    <form id="frm1" onclick="calcrss()">
+      <div class="row">
+        <div class="column">
+          <h3>Upgrade Requirements<br />
+            <input name="ironReq" id="ironreq" type="number" value="0">
+          </h3>
+          <h3>On Hand<br />
+            <input name="ironOnHand" id="irononhand" type="number" value="0"</h3>
+          <h3>In Storehouse<br />
+            <input name="ironStores" id="ironstores" type="number" value="0"</h3>
+          <h3>200<br />
+            <input name="iron0200" id="iron0200" type="number" value="0"</h3>
+          <h3>600<br />
+            <input name="iron0600" id="iron0600" type="number" value="0"</h3>
+          <h3>1K<br />
+            <input name="iron0001K" id="iron0001K" type="number" value="0"</h3>
+        </div>
+        <div class="column">
+          <h3>2K<br />
+            <input name="iron0002K" id="iron0002K" type="number" value="0">
+          </h3>
+          <h3>6K<br />
+            <input name="iron0006K" id="iron0006K" type="number" value="0"</h3>
+          <h3>10K<br />
+            <input name="iron0010K" id="iron0010K" type="number" value="0"</h3>
+          <h3>30K<br />
+            <input name="iron0030K" id="iron0030K" type="number" value="0"</h3>
+          <h3>100K<br />
+            <input name="iron0100K" id="iron0100K" type="number" value="0"</h3>
+          <h3>300K<br />
+            <input name="iron0300K" id="iron0300K" type="number" value="0"</h3>
+        </div>
+      </div>
+      <!-- end row -->
+      <input type="button" value="Calculate Resources">
+      <br />
+      <h3 id="total"></h3>
+      <script>
+					function calcrss() {
+						var ironreq = document.getElementById("ironreq").value;
+						var irononhand = document.getElementById("irononhand").value;
+						var ironstores = document.getElementById("ironstores").value;
+						var iron0200 = document.getElementById("iron0200").value * 200;
+						var iron0600 = document.getElementById("iron0600").value * 600;
+						var iron0001K = document.getElementById("iron0001K").value * 1000;
+						var iron0002K = document.getElementById("iron0002K").value * 2000;
+						var iron0006K = document.getElementById("iron0006K").value * 6000;
+						var iron0010K = document.getElementById("iron0010K").value * 10000;
+						var iron0030K = document.getElementById("iron0030K").value * 30000;
+						var iron0100K = document.getElementById("iron0100K").value * 100000;
+						var iron0300K = document.getElementById("iron0300K").value * 300000;
+						var total = Number(ironreq) -
+									(Number(irononhand) +
+									 Number(ironstores) +
+									 Number(iron0200) +
+									 Number(iron0600) +
+									 Number(iron0001K) +
+									 Number(iron0002K) +
+									 Number(iron0006K) +
+									 Number(iron0010K) +
+									 Number(iron0030K) +
+									 Number(iron0100K) +
+									 Number(iron0300K));
+						if (Number(total) < 0) {
+							total = 0;
+						}
+						document.getElementById("total").innerHTML = "Needed: " + total.toLocaleString();
+					}
+				</script>
+    </form>
+  </main>
+  <footer>
+    <p>This page created by Rick Colgan for SWDV620 Semester Project</p>
+  </footer>
+</div>
+<!-- wrapper -->
+</body>
+</html>

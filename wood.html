@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>KOA Calculator</title>
+<link href="css/SemProj.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="wrapper">
+  <header>
+    <h1>Rick Colgan Semester Project</h1>
+  </header>
+  <nav>
+    <div class="navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="food.html">Food</a></li>
+        <li><a href="wood.html">Wood</a></li>
+        <li><a href="iron.html">Iron</a></li>
+        <li><a href="silver.html">Silver</a></li>
+      </ul>
+    </div>
+    <!-- navigation --> 
+  </nav>
+  <main>
+    <h2>Food Calculator</h2>
+    <form id="frm1" onclick="calcrss()">
+      <div class="row">
+        <div class="column">
+          <h3>Upgrade Requirements<br />
+            <input name="FoodReq" id="foodreq" type="number" value="0">
+          </h3>
+          <h3>On Hand<br />
+            <input name="FoodOnHand" id="foodonhand" type="number" value="0"</h3>
+          <h3>In Storehouse<br />
+            <input name="FoodStores" id="foodstores" type="number" value="0"</h3>
+          <h3>1K<br />
+            <input name="Food0001K" id="food0001k" type="number" value="0"</h3>
+          <h3>3K<br />
+            <input name="Food0003K" id="food0003k" type="number" value="0"</h3>
+          <h3>5K<br />
+            <input name="Food0005K" id="food0005k" type="number" value="0"</h3>
+        </div>
+        <div class="column">
+          <h3>10K<br />
+            <input name="Food0010K" id="food0010k" type="number" value="0">
+          </h3>
+          <h3>30K<br />
+            <input name="Food0030K" id="food0030k" type="number" value="0"</h3>
+          <h3>50K<br />
+            <input name="Food0050K" id="food0050k" type="number" value="0"</h3>
+          <h3>150K<br />
+            <input name="Food0150K" id="food0150k" type="number" value="0"</h3>
+          <h3>500K<br />
+            <input name="Food0500K" id="food0500k" type="number" value="0"</h3>
+          <h3>1.5M<br />
+            <input name="Food1500K" id="food1500k" type="number" value="0"</h3>
+        </div>
+      </div>
+      <!-- end row -->
+      <input type="button" value="Calculate Resources">
+      <br />
+      <h3 id="total"></h3>
+      <script>
+					function calcrss() {
+						var foodreq = document.getElementById("foodreq").value;
+						var foodonhand = document.getElementById("foodonhand").value;
+						var foodstores = document.getElementById("foodstores").value;
+						var food0001k = document.getElementById("food0001k").value * 1000;
+						var food0003k = document.getElementById("food0003k").value * 3000;
+						var food0005k = document.getElementById("food0005k").value * 5000;
+						var food0010k = document.getElementById("food0010k").value * 10000;
+						var food0030k = document.getElementById("food0030k").value * 30000;
+						var food0050k = document.getElementById("food0050k").value * 50000;
+						var food0150k = document.getElementById("food0150k").value * 150000;
+						var food0500k = document.getElementById("food0500k").value * 500000;
+						var food1500k = document.getElementById("food1500k").value * 1500000;
+						var total = Number(foodreq) -
+									(Number(foodonhand) +
+									 Number(foodstores) +
+									 Number(food0001k) +
+									 Number(food0003k) +
+									 Number(food0005k) +
+									 Number(food0010k) +
+									 Number(food0030k) +
+									 Number(food0050k) +
+									 Number(food0150k) +
+									 Number(food0500k) +
+									 Number(food1500k));
+						if (Number(total) < 0) {
+							total = 0;
+						}
+						document.getElementById("total").innerHTML = "Needed: " + total.toLocaleString();
+					}
+				</script>
+    </form>
+  </main>
+  <footer>
+    <p>This page created by Rick Colgan for SWDV620 Semester Project</p>
+  </footer>
+</div>
+<!-- wrapper -->
+</body>
+</html>

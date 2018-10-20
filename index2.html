@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ravens Alliance Resource Calculator</title>
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+<meta name="keywords" content="King of Avalon, Ravens, resource calculator, food, iron, silver, wood">
+</head>
+
+<body>
+<article>
+  <header>
+    <h1>Ravens Alliance Resource Calculator</h1>
+	  <p style="text-align: left">This is a simple to use calculator to help our members determine the amount of resources they must acquire to update their castles.<br /><br />
+	  Enter the amount of each resource you have in the proper fields. The page will calculate the total amount of food you have on hand. Enter the resources necessary for your next upgrade. The calculator will show you the quantity of resources you need to collect. A negative number indicates you have adequate resouces. Have fun!</p>
+  </header>
+  <div class="columns">
+    <div class="food">
+      <form onSubmit="return false"
+			onInput="totalfood.value = FoodOnHand.valueAsNumber + 
+			FoodInStorage.valueAsNumber + 
+			(Food1K.valueAsNumber * 1000) +
+			(Food3K.valueAsNumber * 3000) +
+			(Food5K.valueAsNumber * 5000) +
+			(Food10K.valueAsNumber * 10000) +
+			(Food30K.valueAsNumber * 30000) +
+			(Food50K.valueAsNumber * 50000) +
+			(Food150K.valueAsNumber * 150000) +
+			(Food500K.valueAsNumber * 500000) +
+			(Food15M.valueAsNumber * 1500000) 
+       		foodNeed.value = foodReq.valueAsNumber - totalfood.value">
+        <h2>Food</h2>
+        <p>Upgrade requirements<br />
+          <input name = "foodReq" id="foodReq" type="number" value="0">
+        </p>
+        <p>On Hand<br />
+          <input name="FoodOnHand" id="FoodOnHand" type="number" value = "0">
+        </p>
+        <p>In Storehouse<br />
+          <input name="FoodInStorge" id="FoodInStorage" type="number" value = "0">
+        </p>
+        <p>1K<br />
+          <input name="Food1K" id="Food1K" type="number" value = "0">
+        </p>
+        <p>3K<br />
+          <input name="Food3K" id="Food3K" type="number" value = "0">
+        </p>
+        <p>5K<br />
+          <input name="Food5K" id="Food5K" type="number" value = "0">
+        </p>
+        <p>10K<br />
+          <input name="Food10K" id="Food10K" type="number" value = "0">
+        </p>
+        <p>30K<br />
+          <input name="Food30K" id="Food30K" type="number" value = "0">
+        </p>
+        <p>50K<br />
+          <input name="Food50K" id="Food50K" type="number" value = "0">
+        </p>
+        <p>150K<br />
+          <input name="Food150K" id="Food150K" type="number" value = "0">
+        </p>
+        <p>500K<br />
+          <input name="Food500K" id="Food500K" type="number" value = "0">
+        </p>
+        <p>1.5M<br />
+          <input name="Food15M" id="Food15M" type="number" value = "0">
+        </p>
+        <h2>Total food<br />
+          <output name="totalfood" id="totalfood" for="Total Food"> </output>
+        </h2>
+        <h2>Food needed<br />
+          <output name = "foodNeed" id="foodNeed" for="Food needed"></output>
+        </h2>
+      </form>
+    </div>
+    <div class="wood">
+      <form onSubmit="return false"
+			onInput="totalwood.value = woodOnHand.valueAsNumber + 
+			woodInStorage.valueAsNumber + 
+			(wood1K.valueAsNumber * 1000) +
+			(wood3K.valueAsNumber * 3000) +
+			(wood5K.valueAsNumber * 5000) +
+			(wood10K.valueAsNumber * 10000) +
+			(wood30K.valueAsNumber * 30000) +
+			(wood50K.valueAsNumber * 50000) +
+			(wood150K.valueAsNumber * 150000) +
+			(wood500K.valueAsNumber * 500000) +
+			(wood15M.valueAsNumber * 1500000) 
+            woodNeed.value = woodReq.valueAsNumber - totalwood.value">
+        <h2>Wood</h2>
+        <p>Upgrade requirements<br />
+          <input name = "woodReq" id="woodReq" type="number" value="0">
+        </p>
+        <p>On Hand<br />
+          <input name="woodOnHand" id="woodOnHand" type="number" value = "0">
+        </p>
+        <p>In Storehouse<br />
+          <input name="woodInStorge" id="woodInStorage" type="number" value = "0">
+        </p>
+        <p>1K<br />
+          <input name="wood1K" id="wood1K" type="number" value = "0">
+        </p>
+        <p>3K<br />
+          <input name="wood3K" id="wood3K" type="number" value = "0">
+        </p>
+        <p>5K<br />
+          <input name="wood5K" id="wood5K" type="number" value = "0">
+        </p>
+        <p>10K<br />
+          <input name="wood10K" id="wood10K" type="number" value = "0">
+        </p>
+        <p>30K<br />
+          <input name="wood30K" id="wood30K" type="number" value = "0">
+        </p>
+        <p>50K<br />
+          <input name="wood50K" id="wood50K" type="number" value = "0">
+        </p>
+        <p>150K<br />
+          <input name="wood150K" id="wood150K" type="number" value = "0">
+        </p>
+        <p>500K<br />
+          <input name="wood500K" id="wood500K" type="number" value = "0">
+        </p>
+        <p>1.5M<br />
+          <input name="wood15M" id="wood15M" type="number" value = "0">
+        </p>
+        <h2>Total wood<br />
+          <output name="totalwood" id="totalwood" for="Total wood"> </output>
+        </h2>
+        <h2>Wood needed<br />
+          <output name = "woodNeed" id="woodNeed" for="Wood needed"></output>
+        </h2>
+      </form>
+    </div>
+    <div class="iron">
+      <form onSubmit="return false"
+			onInput="totaliron.value = ironOnHand.valueAsNumber +
+			ironInStorage.valueAsNumber + 
+			(iron200.valueAsNumber * 200) +
+			(iron600.valueAsNumber * 600) +
+			(iron1K.valueAsNumber * 1000) +
+			(iron2K.valueAsNumber * 2000) +
+			(iron6K.valueAsNumber * 6000) +
+			(iron10K.valueAsNumber * 10000) +
+			(iron30K.valueAsNumber * 30000) +
+			(iron100K.valueAsNumber * 100000) +
+			(iron300K.valueAsNumber * 300000)
+      		ironNeed.value = ironReq.valueAsNumber - totaliron.value">
+        <h2>Iron (Ore)</h2>
+        <p>Upgrade requirements<br />
+          <input name = "ironReq" id="ironReq" type="number" value="0">
+        </p>
+        <p>On Hand<br />
+          <input name="ironOnHand" id="ironOnHand" type="number" value = "0">
+        </p>
+        <p>In Storehouse<br />
+          <input name="ironInStorge" id="ironInStorage" type="number" value = "0">
+        </p>
+        <p>200<br />
+          <input name="iron200" id="iron200" type="number" value = "0">
+        </p>
+        <p>600<br />
+          <input name="iron600" id="iron600" type="number" value = "0">
+        </p>
+        <p>1K<br />
+          <input name="iron1K" id="iron1K" type="number" value = "0">
+        </p>
+        <p>2K<br />
+          <input name="iron2K" id="iron2K" type="number" value = "0">
+        </p>
+        <p>6K<br />
+          <input name="iron6K" id="iron6K" type="number" value = "0">
+        </p>
+        <p>10K<br />
+          <input name="iron10K" id="iron10K" type="number" value = "0">
+        </p>
+        <p>30K<br />
+          <input name="iron30K" id="iron30K" type="number" value = "0">
+        </p>
+        <p>100K<br />
+          <input name="iron100K" id="iron100K" type="number" value = "0">
+        </p>
+        <p>300K<br />
+          <input name="iron300K" id="iron300K" type="number" value = "0">
+        </p>
+        <h2>Total iron<br />
+          <output name="totaliron" id="totaliron" for="Total iron" > </output>
+        </h2>
+        <h2>Iron needed<br />
+          <output name = "ironNeed" id="ironNeed" for="Iron needed"></output>
+        </h2>
+      </form>
+    </div>
+    <div class="silver">
+      <form onSubmit="return false"
+			onInput="totalsilver.value = silverOnHand.valueAsNumber + 
+			silverInStorage.valueAsNumber + 
+			(silver50.valueAsNumber * 50) +
+			(silver150.valueAsNumber * 150) +
+			(silver250.valueAsNumber * 250) +
+			(silver500.valueAsNumber * 500) +
+			(silver1500.valueAsNumber * 1500) +
+			(silver2500.valueAsNumber * 2500) +
+			(silver7500.valueAsNumber * 7500) +
+			(silver25K.valueAsNumber * 25000) +
+			(silver75K.valueAsNumber * 75000)
+       		silverNeed.value = silverReq.valueAsNumber - totalsilver.value  ">
+        <h2>Silver</h2>
+        <p>Upgrade requirements<br />
+          <input name = "silverReq" id="silverReq" type="number" value="0">
+        </p>
+        <p>On Hand<br />
+          <input name="silverOnHand" id="silverOnHand" type="number" value = "0">
+        </p>
+        <p>In Storehouse<br />
+          <input name="silverInStorge" id="silverInStorage" type="number" value = "0">
+        </p>
+        <p>50<br />
+          <input name="silver50" id="silver50" type="number" value = "0">
+        </p>
+        <p>150<br />
+          <input name="silver150" id="silver150" type="number" value = "0">
+        </p>
+        <p>250<br />
+          <input name="silver250" id="silver250" type="number" value = "0">
+        </p>
+        <p>500<br />
+          <input name="silver500" id="silver500" type="number" value = "0">
+        </p>
+        <p>1.5K<br />
+          <input name="silver1500" id="silver1500" type="number" value = "0">
+        </p>
+		<p>2.5K<br />
+          <input name="silver2500" id="silver2500" type="number" value = "0">
+        </p>
+        <p>7.5K<br />
+          <input name="silver7500" id="silver7500" type="number" value = "0">
+        </p>
+        <p>25K<br />
+          <input name="silver25K" id="silver25K" type="number" value = "0">
+        </p>
+        <p>75K<br />
+          <input name="silver75K" id="silver75K" type="number" value = "0">
+        </p>
+        <h2>Total silver<br />
+          <output name="totalsilver" id="totalsilver" for="Total silver" > </output>
+        </h2>
+        <h2>Silver needed<br />
+          <output name = "silverNeed" id="silverNeed" for="Silver needed"></output>
+        </h2>
+      </form>
+    </div>
+  </div>
+<div class="clear"></div>
+</article>
+</body>
